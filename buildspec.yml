@@ -18,8 +18,8 @@ phases:
 
 artifacts:
   files:
-    - dist/**
-    - node_modules/**
+    - dist/**/*
+    - node_modules/**/*
 
 cache:
   paths:
