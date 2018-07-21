@@ -4,7 +4,7 @@
     "declaration": true,
     "pretty": true,
     "module": "commonjs",
-    "target": "es5",
+    "target": "es6",
     "lib": ["es6"],
     "moduleResolution": "node",
     "noImplicitAny": true,
@@ -19,10 +19,5 @@
     "./node_modules/@types/jasmine/index.d.ts",
     "./node_modules/@types/node/index.d.ts"
   ],
-  "exclude": [
-    "dist",
-    "node_modules",
-    "examples",
-    "spec"
-  ]
+  "exclude": ["dist", "node_modules", "examples", "spec"]
 }

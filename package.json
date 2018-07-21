@@ -21,8 +21,11 @@
     "posttest": "npm run lint",
     "lint": "tslint -c tslint.json --project tsconfig.json && tslint -c tslint.json --project spec/tsconfig.json"
   },
-  "dependencies": {},
+  "dependencies": {
+    "aws-sdk": "2.279.1"
+  },
   "devDependencies": {
+    "@types/aws-lambda": "8.10.8",
     "@types/jasmine": "2.8.8",
     "@types/node": "10.5.2",
     "jasmine": "3.1.0",
