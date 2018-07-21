@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Install npm packages...
+      - npm install
+  pre_build:
+    commands:
+      - echo Nothing to do in the pre_build phase...
+  build:
+    commands:
+      - echo Building on `date`...
+      - npm run prepare
+  post_build:
+    commands:
+      - echo Nothing to do in the post_build phase...
+
+artifacts:
+  files:
+    - dist
+    - node_modules
+
+cache:
+  paths:
+    - node_modules
