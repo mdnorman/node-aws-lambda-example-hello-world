@@ -1,5 +1,4 @@
 import { Context } from 'aws-lambda';
-import * as events from './events';
 
 interface HelloResponse {
   statusCode: number;
