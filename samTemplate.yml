@@ -9,13 +9,13 @@ Resources:
       Runtime: nodejs8.10
       CodeUri: .
       Events:
-        HelloWorldTSApiGet:
+        GetResource:
           Type: Api
           Properties:
-            Path: /hello-world
+            Path: /
             Method: GET
-        HelloWorldTSApiPost:
+        PostResource:
           Type: Api
           Properties:
-            Path: /hello-world
+            Path: /
             Method: POST
