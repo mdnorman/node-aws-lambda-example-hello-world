@@ -1,4 +1,5 @@
 import { APIGatewayProxyEvent, Context } from 'aws-lambda';
+import { ArgumentError } from '../utils/errors';
 
 export type Handler<TEvent = any, TResult = any> = (
   event: TEvent,
@@ -16,10 +17,28 @@ export const createApiGatewayProxyHandler = (handler: Handler) => async (
   const event = { ...(proxyEvent.body && JSON.parse(proxyEvent.body)), ...proxyEvent.queryStringParameters };
   console.log('Event:', JSON.stringify(event));
 
-  const result = await handler(event, context, proxyEvent);
+  try {
+    const result = await handler(event, context, proxyEvent);
 
-  return {
-    statusCode: 200,
-    body: result,
-  };
+    return {
+      statusCode: 200,
+      body: result,
+    };
+  } catch (e) {
+    if (e instanceof ArgumentError) {
+      return {
+        statusCode: 400,
+        body: {
+          error: e.message,
+        },
+      };
+    }
+
+    return {
+      statusCode: 500,
+      body: {
+        error: e.message,
+      },
+    };
+  }
 };
