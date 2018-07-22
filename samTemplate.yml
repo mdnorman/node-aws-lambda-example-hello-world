@@ -41,15 +41,15 @@ Resources:
                   required: false
                   type: string
               responses:
-                200:
+                "200":
                   description: Successful operation
                   schema:
                     type: string
-                400:
+                "400":
                   description: Invalid word provided
                   schema:
                     $ref: "#/definitions/ErrorResponse"
-                500:
+                "500":
                   description: Unhandled error
                   schema:
                     $ref: "#/definitions/ErrorResponse"
@@ -70,11 +70,15 @@ Resources:
                     $ref: "#/definitions/DataInput"
 
               responses:
-                400:
+                "200":
+                  description: Successful operation
+                  schema:
+                    type: string
+                "400":
                   description: Invalid word provided
                   schema:
                     $ref: "#/definitions/ErrorResponse"
-                500:
+                "500":
                   description: Unhandled error
                   schema:
                     $ref: "#/definitions/ErrorResponse"
