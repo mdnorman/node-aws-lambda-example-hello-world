@@ -7,7 +7,7 @@ Resources:
     Properties:
       Handler: index.handler
       Runtime: nodejs8.10
-      CodeUri: ./dist
+      CodeUri: .
       Events:
         HelloWorldTSApi:
           Type: Api
