@@ -67,7 +67,7 @@ Resources:
                   description: The data for the method
                   required: false
                   schema:
-                    type: object
+                    $ref: "#/definitions/DataInput"
 
               responses:
                 400:
