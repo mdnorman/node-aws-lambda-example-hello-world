@@ -26,6 +26,7 @@ export const createApiGatewayProxyHandler = (handler: Handler) => async (
     };
   } catch (e) {
     if (e instanceof ArgumentError) {
+      console.log('Argument Error:', e);
       return {
         statusCode: 400,
         body: {
@@ -34,6 +35,7 @@ export const createApiGatewayProxyHandler = (handler: Handler) => async (
       };
     }
 
+    console.error('Unhandled Error:', e);
     return {
       statusCode: 500,
       body: {
