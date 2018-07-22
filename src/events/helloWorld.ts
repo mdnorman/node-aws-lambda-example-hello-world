@@ -1,4 +1,4 @@
-import { Handler, Context } from 'aws-lambda';
+import { APIGatewayProxyEvent, APIGatewayProxyHandler, Context } from 'aws-lambda';
 import { helloWorld } from '../services/helloWorld';
 
 export interface HelloRequest {
@@ -10,11 +10,12 @@ export interface HelloResponse {
   body: string;
 }
 
-export const handler: Handler<HelloRequest, HelloResponse> = async (event: HelloRequest, context: Context) => {
+export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEvent, context: Context) => {
   console.log('Event:', JSON.stringify(event));
   console.log('Context:', JSON.stringify(context));
 
-  const body = await helloWorld(event.word);
+  const params = event.queryStringParameters || (event.body && JSON.parse(event.body)) || {};
+  const body = await helloWorld(params.word);
   return {
     body,
     statusCode: 200,
