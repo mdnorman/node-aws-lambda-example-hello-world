@@ -7,7 +7,10 @@ class IllegalWordError extends ArgumentError {
 }
 
 export const helloWorld = async (word?: string) => {
+  console.log(`helloWorld: ${word}`);
+
   if (word === 'BAD!') {
+    console.log(`helloWorld bad word: ${word}`);
     throw new IllegalWordError(word);
   }
 
