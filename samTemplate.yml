@@ -14,8 +14,81 @@ Resources:
           Properties:
             Path: /
             Method: GET
+            RestApiId: HelloWorldTSApi
         PostResource:
           Type: Api
           Properties:
             Path: /
             Method: POST
+            RestApiId: HelloWorldTSApi
+
+  HelloWorldTSApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: Prod
+      DefinitionBody:
+        paths:
+          /:
+            get:
+              summary: Get a hello message
+              description: Returns a JSON string with a nice message
+              produces:
+                - application/json
+              parameters:
+                - name: word
+                  in: query
+                  description: A word to use in the message
+                  required: false
+                  type: string
+              responses:
+                200:
+                  description: Successful operation
+                  schema:
+                    type: string
+                400:
+                  description: Invalid word provided
+                  schema:
+                    $ref: "#/definitions/ErrorResponse"
+                500:
+                  description: Unhandled error
+                  schema:
+                    $ref: "#/definitions/ErrorResponse"
+
+            post:
+              summary: Produce a hello message
+              description: Returns a JSON string with a nice message
+              consumes:
+                - application/json
+              produces:
+                - application/json
+              parameters:
+                - name: body
+                  in: body
+                  description: The data for the method
+                  required: false
+                  schema:
+                    type: object
+
+              responses:
+                400:
+                  description: Invalid word provided
+                  schema:
+                    $ref: "#/definitions/ErrorResponse"
+                500:
+                  description: Unhandled error
+                  schema:
+                    $ref: "#/definitions/ErrorResponse"
+
+        definitions:
+          DataInput:
+            properties:
+              word:
+                type: string
+                description: Word to be used in the message
+                required: false
+
+          ErrorResponse:
+            properties:
+              error:
+                type: string
+                description: Error message
