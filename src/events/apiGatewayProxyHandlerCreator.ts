@@ -19,6 +19,7 @@ export const createApiGatewayProxyHandler = (handler: Handler) => async (
 
   try {
     const result = await handler(event, context, proxyEvent);
+    console.log('Result:', JSON.stringify(result));
 
     return {
       statusCode: 200,
