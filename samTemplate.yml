@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: CHANGEME
+Resources:
+  CHANGEME:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: dist/index.handler
+      Runtime: nodejs8.10
+      CodeUri: .
+      Events:
+        CHANGEME:
+          Type: Api
+          Properties:
+            Path: /CHANGEME
+            Method: GET
