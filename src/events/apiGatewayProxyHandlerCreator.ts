@@ -7,18 +7,18 @@ export type Handler<TEvent = any, TResult = any> = (
   proxyEvent: APIGatewayProxyEvent,
 ) => Promise<TResult>;
 
-export const createApiGatewayProxyHandler = (handler: Handler) => async (
+export const createApiGatewayProxyHandler = <TEvent = any, TResult = any>(handler: Handler<TEvent, TResult>) => async (
   proxyEvent: APIGatewayProxyEvent,
   context: Context,
 ) => {
   console.log('ProxyEvent:', JSON.stringify(proxyEvent));
   console.log('Context:', JSON.stringify(context));
 
-  const event = { ...(proxyEvent.body && JSON.parse(proxyEvent.body)), ...proxyEvent.queryStringParameters };
+  const event: TEvent = { ...(proxyEvent.body && JSON.parse(proxyEvent.body)), ...proxyEvent.queryStringParameters };
   console.log('Event:', JSON.stringify(event));
 
   try {
-    const result = await handler(event, context, proxyEvent);
+    const result: TResult = await handler(event, context, proxyEvent);
     console.log('Result:', JSON.stringify(result));
 
     return {
