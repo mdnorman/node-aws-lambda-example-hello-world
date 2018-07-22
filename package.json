@@ -14,7 +14,7 @@
     "url": "https://bitbucket.org/denormans/CHANGEME/issues"
   },
   "scripts": {
-    "prepare": "pretty-quick --stage && tsc",
+    "prepare": "tsc",
     "pretest": "pretty-quick --stage && tsc && tsc -p spec/tsconfig.json",
     "test": "jasmine",
     "test:integration": "npm run pretest && jasmine --config=spec/support/jasmine-integration.json",
