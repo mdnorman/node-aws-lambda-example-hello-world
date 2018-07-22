@@ -27,6 +27,7 @@ Resources:
     Properties:
       StageName: Prod
       DefinitionBody:
+        swagger: "2.0"
         paths:
           /:
             get:
@@ -89,7 +90,6 @@ Resources:
               word:
                 type: string
                 description: Word to be used in the message
-                required: false
 
           ErrorResponse:
             properties:
