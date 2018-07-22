@@ -13,13 +13,13 @@ Resources:
           Type: Api
           Properties:
             Path: /
-            Method: GET
+            Method: get
             RestApiId: HelloWorldTSApi
         PostResource:
           Type: Api
           Properties:
             Path: /
-            Method: POST
+            Method: post
             RestApiId: HelloWorldTSApi
 
   HelloWorldTSApi:
