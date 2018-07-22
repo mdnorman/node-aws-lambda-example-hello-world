@@ -12,7 +12,7 @@ phases:
     commands:
       - echo Building on `date`...
       - npm run prepare
-      - aws cloudformation package --template-file config/samTemplate.yml --s3-bucket $CLOUDFORMATION_S3_BUCKET --s3-prefix $CLOUDFORMATION_S3_PATH --output-template-file outputSamTemplate.yml
+      - aws cloudformation package --template-file samTemplate.yml --s3-bucket $CLOUDFORMATION_S3_BUCKET --s3-prefix $CLOUDFORMATION_S3_PATH --output-template-file outputSamTemplate.yml
   post_build:
     commands:
       - echo Nothing to do in the post_build phase...
@@ -20,7 +20,7 @@ phases:
 artifacts:
   type: zip
   files:
-    - config/samTemplate.yml
+    - samTemplate.yml
     - outputSamTemplate.yml
 
 cache:
