@@ -27,7 +27,11 @@ Resources:
     Properties:
       StageName: Prod
       DefinitionBody:
-        swagger: "2.0"
+        swagger: 2.0
+        info:
+          title: Hello World!
+          description: Simple function to return a nice message
+          version: 1.0.0
         paths:
           /:
             get:
