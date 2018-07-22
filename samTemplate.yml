@@ -13,13 +13,13 @@ Resources:
           Type: Api
           Properties:
             Path: /
-            Method: get
+            Method: GET
             RestApiId: !Ref HelloWorldTSApi
         PostResource:
           Type: Api
           Properties:
             Path: /
-            Method: post
+            Method: POST
             RestApiId: !Ref HelloWorldTSApi
 
   HelloWorldTSApi:
@@ -51,7 +51,7 @@ Resources:
                   schema:
                     type: string
                 '400':
-                  description: Invalid word provided
+                  description: Invalid input provided
                   schema:
                     $ref: "#/definitions/ErrorResponse"
                 '500':
@@ -92,7 +92,7 @@ Resources:
                   schema:
                     type: string
                 '400':
-                  description: Invalid word provided
+                  description: Invalid input provided
                   schema:
                     $ref: "#/definitions/ErrorResponse"
                 '500':
@@ -113,10 +113,6 @@ Resources:
                 type: aws_proxy
 
         definitions:
-          Empty:
-            type: object
-            title: Empty Schema
-
           DataInput:
             properties:
               word:
