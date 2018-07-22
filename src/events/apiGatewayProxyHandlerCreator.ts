@@ -34,6 +34,11 @@ export const createApiGatewayProxyHandler = (handler: Handler) => async (
       };
     }
 
-    throw e;
+    return {
+      statusCode: 500,
+      body: {
+        error: e.message,
+      },
+    };
   }
 };
