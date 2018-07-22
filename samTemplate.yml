@@ -46,18 +46,30 @@ Resources:
                   required: false
                   type: string
               responses:
-                "200":
+                '200':
                   description: Successful operation
                   schema:
                     type: string
-                "400":
+                '400':
                   description: Invalid word provided
                   schema:
                     $ref: "#/definitions/ErrorResponse"
-                "500":
+                '500':
                   description: Unhandled error
                   schema:
                     $ref: "#/definitions/ErrorResponse"
+
+              x-amazon-apigateway-integration:
+                responses:
+                  default:
+                    statusCode: 200
+
+                uri:
+                  Fn::Sub: "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${HelloWorldTS.Arn}/invocations"
+
+                passthroughBehavior: when_no_match
+                httpMethod: POST
+                type: aws_proxy
 
             post:
               summary: Produce a hello message
@@ -75,20 +87,36 @@ Resources:
                     $ref: "#/definitions/DataInput"
 
               responses:
-                "200":
+                '200':
                   description: Successful operation
                   schema:
                     type: string
-                "400":
+                '400':
                   description: Invalid word provided
                   schema:
                     $ref: "#/definitions/ErrorResponse"
-                "500":
+                '500':
                   description: Unhandled error
                   schema:
                     $ref: "#/definitions/ErrorResponse"
 
+              x-amazon-apigateway-integration:
+                responses:
+                  default:
+                    statusCode: 200
+
+                uri:
+                  Fn::Sub: "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${HelloWorldTS.Arn}/invocations"
+
+                passthroughBehavior: when_no_match
+                httpMethod: POST
+                type: aws_proxy
+
         definitions:
+          Empty:
+            type: object
+            title: Empty Schema
+
           DataInput:
             properties:
               word:
