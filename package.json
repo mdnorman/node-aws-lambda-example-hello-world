@@ -15,7 +15,7 @@
   },
   "scripts": {
     "prepare": "tsc",
-    "pretest": "pretty-quick --stage && tsc && tsc -p spec/tsconfig.json",
+    "pretest": "tsc && tsc -p spec/tsconfig.json",
     "test": "jasmine",
     "test:integration": "npm run pretest && jasmine --config=spec/support/jasmine-integration.json",
     "posttest": "npm run lint",
