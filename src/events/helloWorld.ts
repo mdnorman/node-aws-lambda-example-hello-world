@@ -1,5 +1,6 @@
 import { APIGatewayProxyEvent, APIGatewayProxyHandler, Context } from 'aws-lambda';
 import { helloWorld } from '../services/helloWorld';
+import { createApiGatewayProxyHandler } from './apiGatewayProxyHandlerCreator';
 
 export interface HelloRequest {
   word?: string;
@@ -10,7 +11,7 @@ export interface HelloResponse {
   body: string;
 }
 
-export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEvent, context: Context) => {
+export const handler2: APIGatewayProxyHandler = async (event: APIGatewayProxyEvent, context: Context) => {
   console.log('Event:', JSON.stringify(event));
   console.log('Context:', JSON.stringify(context));
 
@@ -21,3 +22,5 @@ export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEven
     statusCode: 200,
   };
 };
+
+export const handler = createApiGatewayProxyHandler(({ word }) => helloWorld(word));
