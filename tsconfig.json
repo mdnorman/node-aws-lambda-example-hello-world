@@ -15,7 +15,7 @@
     "forceConsistentCasingInFileNames": true,
     "outDir": "dist"
   },
-  "include": ["./src/*.ts"],
+  "include": ["./src/**/*.ts"],
   "files": ["./node_modules/@types/jasmine/index.d.ts", "./node_modules/@types/node/index.d.ts"],
   "exclude": ["dist", "node_modules", "examples", "spec"]
 }
