@@ -1,4 +1,8 @@
 import { helloWorld } from '../services/helloWorld';
 import { createApiGatewayProxyHandler } from './apiGatewayProxyHandlerCreator';
 
-export const handler = createApiGatewayProxyHandler(({ word }) => helloWorld(word));
+interface HelloEvent {
+  word?: string;
+}
+
+export const handler = createApiGatewayProxyHandler<HelloEvent, string>(({ word }) => helloWorld(word));
