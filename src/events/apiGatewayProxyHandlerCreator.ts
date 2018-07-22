@@ -23,25 +23,25 @@ export const createApiGatewayProxyHandler = <TEvent = any, TResult = any>(handle
 
     return {
       statusCode: 200,
-      body: result,
+      body: JSON.stringify(result),
     };
   } catch (e) {
     if (e instanceof ArgumentError) {
       console.log('Argument Error:', e);
       return {
         statusCode: 400,
-        body: {
+        body: JSON.stringify({
           error: e.message,
-        },
+        }),
       };
     }
 
     console.error('Unhandled Error:', e);
     return {
       statusCode: 500,
-      body: {
+      body: JSON.stringify({
         error: e.message,
-      },
+      }),
     };
   }
 };
