@@ -14,13 +14,13 @@ Resources:
           Properties:
             Path: /
             Method: get
-            RestApiId: HelloWorldTSApi
+            RestApiId: !Ref HelloWorldTSApi
         PostResource:
           Type: Api
           Properties:
             Path: /
             Method: post
-            RestApiId: HelloWorldTSApi
+            RestApiId: !Ref HelloWorldTSApi
 
   HelloWorldTSApi:
     Type: AWS::Serverless::Api
