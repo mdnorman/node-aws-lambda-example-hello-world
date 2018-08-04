@@ -14,5 +14,5 @@ export const helloWorld = async (word?: string) => {
     throw new IllegalWordError(word);
   }
 
-  return word ? `Hello ${word}!` : 'Hello Lambda World!';
+  return word && word.trim() ? `Hello ${word}!` : 'Hello Lambda World!';
 };
