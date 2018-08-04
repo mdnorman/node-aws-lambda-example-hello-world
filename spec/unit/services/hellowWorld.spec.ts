@@ -14,14 +14,14 @@ describe('helloWorld', () => {
     });
   });
 
-  describe('with null input', () => {
+  describe('with undefined input', () => {
     it('should not be null', async () => {
-      const result = await helloWorld(null);
+      const result = await helloWorld(undefined);
       expect(result).not.toBeNull();
     });
 
     it('should return generic message', async () => {
-      const result = await helloWorld(null);
+      const result = await helloWorld(undefined);
       expect(result).toEqual('Hello Lambda World!');
     });
   });
