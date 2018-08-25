@@ -1,17 +1,17 @@
 {
   "author": "Michael D. Norman",
-  "name": "CHANGEME",
+  "name": "node-aws-lambda-example-hello-world",
   "description": "",
   "private": true,
   "license": "commercial",
   "version": "0.0.0",
-  "homepage": "https://github.com/mdnorman/CHANGEME/wiki/Home",
+  "homepage": "https://github.com/mdnorman/node-aws-lambda-example-hello-world/wiki/Home",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mdnorman/CHANGEME"
+    "url": "https://github.com/mdnorman/node-aws-lambda-example-hello-world"
   },
   "bugs": {
-    "url": "https://github.com/mdnorman/CHANGEME/issues"
+    "url": "https://github.com/mdnorman/node-aws-lambda-example-hello-world/issues"
   },
   "scripts": {
     "clean": "rm -rf dist && rm -rf out",
