@@ -26,30 +26,34 @@ custom:
     createRoute53Record: true
   documentation:
     info:
-      title: CHANGEME
-      description: CHANGEME
+      title: Hello World!
+      description: Simple function to return a nice message
       version: 1.0.0
     models:
-    - name: DataInput
-      description: Data input for the application
-      contentType: application/json
-      schema:
-        type: object
+      - name: DataInput
+        description: Data input for the application
+        contentType: application/json
+        schema:
+          type: object
+          properties:
+            word:
+              type: string
+              description: Word to be used in the message
 
-    - name: DataOutput
-      description: Response message
-      contentType: application/json
-      schema:
-        type: object
-
-    - name: ErrorResponse
-      description: Error response from the application
-      contentType: application/json
-      schema:
-      properties:
-        error:
+      - name: DataOutput
+        description: Response message
+        contentType: application/json
+        schema:
           type: string
-          description: Error message
+
+      - name: ErrorResponse
+        description: Error response from the application
+        contentType: application/json
+        schema:
+        properties:
+          error:
+            type: string
+            description: Error message
 
 functions:
   helloWorld:
@@ -60,32 +64,38 @@ functions:
         method: get
         cors: true
         documentation:
-          summary: CHANGEME
-          description: CHANGEME
+          summary: Get a hello message
+          description: Returns a JSON string with a nice message
+          queryParams:
+          - name: word
+            in: query
+            description: A word to use in the message
+            required: false
+            type: string
           methodResponses:
-          - statusCode: '200'
-            responseBody:
-              description: Successful operation
-            responseModels:
-              "application/json": DataOutput
-          - statusCode: '400'
-            responseBody:
-              description: Invalid input provided
-            responseModels:
-              "application/json": ErrorResponse
-          - statusCode: '500'
-            responseBody:
-              description: Unhandled error
-            responseModels:
-              "application/json": ErrorResponse
+            - statusCode: '200'
+              responseBody:
+                description: Successful operation
+              responseModels:
+                "application/json": DataOutput
+            - statusCode: '400'
+              responseBody:
+                description: Invalid input provided
+              responseModels:
+                "application/json": ErrorResponse
+            - statusCode: '500'
+              responseBody:
+                description: Unhandled error
+              responseModels:
+                "application/json": ErrorResponse
 
     - http:
         path: /
         method: post
         cors: true
         documentation:
-          summary: CHANGEME
-          description: CHANGEME
+          summary: Produce a hello message
+          description: Returns a JSON string with a nice message
           requestModels:
             "application/json": DataInput
           methodResponses:
