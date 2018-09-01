@@ -1,4 +1,4 @@
-service: CHANGEME
+service: node-aws-lambda-example-hello-world
 
 plugins:
   - serverless-domain-manager
@@ -20,15 +20,19 @@ custom:
   customDomain:
     domainName: ${self:custom.domainName}
     certificateName: ${self:custom.domainName}
-    basePath: CHANGEME
+    basePath: hello
     stage: ${self:custom.stage}
     createRoute53Record: true
 
 functions:
-  CHANGEME:
-    handler: dist/events/CHANGEME.handler
+  helloWorld:
+    handler: dist/events/helloWorld.handler
     events:
     - http:
         path: /
         method: get
+        cors: true
+    - http:
+        path: /
+        method: post
         cors: true
