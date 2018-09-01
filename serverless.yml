@@ -1,0 +1,34 @@
+service: CHANGEME
+
+plugins:
+  - serverless-domain-manager
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  profile: serverless
+  stage: test
+  region: us-east-1
+
+custom:
+  stage: ${opt:stage, self:provider.stage}
+  domainName: ${self:custom.domainNameStage.${self:custom.stage}}
+  domainNameStage:
+    test: test-api.${self:custom.baseDomainName}
+    prod: api.${self:custom.baseDomainName}
+  baseDomainName: d-normans.com
+  customDomain:
+    domainName: ${self:custom.domainName}
+    certificateName: ${self:custom.domainName}
+    basePath: CHANGEME
+    stage: ${self:custom.stage}
+    createRoute53Record: true
+
+functions:
+  CHANGEME:
+    handler: dist/events/CHANGEME.handler
+    events:
+    - http:
+        path: /
+        method: get
+        cors: true

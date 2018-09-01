@@ -22,7 +22,9 @@
     "test:integration": "npm run pretest && jasmine --config=spec/support/jasmine-integration.json",
     "posttest": "npm run lint",
     "lint": "tslint -c tslint.json --project tsconfig.json && tslint -c tslint.json --project spec/tsconfig.json",
-    "pretty": "pretty-quick --stage"
+    "pretty": "pretty-quick --stage",
+    "deploy:test": "npm run build && serverless deploy -v --stage test",
+    "deploy": "npm run build && serverless deploy -v --stage prod"
   },
   "dependencies": {
     "aws-sdk": "2.279.1"
@@ -35,6 +37,8 @@
     "jasmine-spec-reporter": "4.2.1",
     "prettier": "1.13.7",
     "pretty-quick": "1.6.0",
+    "serverless": "1.30.3",
+    "serverless-domain-manager": "2.6.0",
     "tslint": "5.11.0",
     "tslint-config-airbnb": "5.9.2",
     "tslint-react": "3.6.0",
