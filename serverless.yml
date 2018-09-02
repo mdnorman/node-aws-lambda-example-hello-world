@@ -46,10 +46,11 @@ custom:
       description: Error response from the application
       contentType: application/json
       schema:
-      properties:
-        error:
-          type: string
-          description: Error message
+        type: object
+        properties:
+          error:
+            type: string
+            description: Error message
 
 functions:
   CHANGEME:
