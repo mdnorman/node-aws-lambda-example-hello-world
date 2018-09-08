@@ -6,9 +6,11 @@
 
 1.  Install `nvm` (Node Version Manager)
 2.  `cd` to the project directory and execute the following:
-    1.  `nvm install`
-    2.  `nvm use`
-    3.  `npm install`
+    ```
+    nvm install
+    nvm use
+    npm install
+    ```
 
 ### AWS
 
@@ -18,7 +20,10 @@
 
 ### Serverless
 
-1.  Install `serverless` as a global: `npm install -g serverless`
+1.  Install `serverless` as a global
+    ```
+    npm install -g serverless
+    ```
 
 ### Domain Name
 
@@ -26,16 +31,23 @@
     1.  Create `test-api.whatever.com`
     2.  Create `api.whatever.com`
 2.  Change the base `custom.baseDomainName` property in `serverless.yml` to the zone name, eg `whatever.com`
-3.  Then run `serverless create_domain`
+3.  Then run:
+    ```
+    serverless create_domain
+    ```
 
 ## Deploy
 
 ### Test
 
-`npm run deploy:test`
+```
+npm run deploy:test
+```
 
 ### Production
 
-`npm run deploy`
+```
+npm run deploy
+```
 
 [serverless-domain-manager]: https://github.com/amplify-education/serverless-domain-manager
