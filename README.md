@@ -28,10 +28,11 @@ Many popular IDEs and editors support this out of the box or with a plugin.
 
 ### Serverless
 
-1.  Install `serverless` as a global
-    ```
-    npm install -g serverless
-    ```
+This project uses [Serverless] to deploy. Install `serverless` as a global:
+
+```
+npm install -g serverless
+```
 
 ### Domain Name
 
@@ -109,5 +110,6 @@ npm run deploy
 [editorconfig]: https://editorconfig.org/
 [jasmine]: https://jasmine.github.io/
 [prettier]: https://prettier.io/
+[serverless]: https://serverless.com/
 [serverless-domain-manager]: https://github.com/amplify-education/serverless-domain-manager
 [tslint]: https://palantir.github.io/tslint/
