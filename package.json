@@ -40,6 +40,7 @@
     "serverless": "1.30.3",
     "serverless-aws-documentation": "1.1.0",
     "serverless-domain-manager": "2.6.0",
+    "ts-node": "7.0.1",
     "tslint": "5.11.0",
     "tslint-config-airbnb": "5.9.2",
     "tslint-react": "3.6.0",
