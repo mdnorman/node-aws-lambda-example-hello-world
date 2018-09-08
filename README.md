@@ -4,7 +4,7 @@
 
 ### Node
 
-1.  Install `nvm` (Node Version Manager)
+1.  Install `nvm` ([Node Version Manager])
 2.  `cd` to the project directory and execute the following:
     ```
     nvm install
@@ -109,6 +109,7 @@ npm run deploy
 
 [editorconfig]: https://editorconfig.org/
 [jasmine]: https://jasmine.github.io/
+[node version manager]: https://github.com/creationix/nvm
 [prettier]: https://prettier.io/
 [serverless]: https://serverless.com/
 [serverless-domain-manager]: https://github.com/amplify-education/serverless-domain-manager
