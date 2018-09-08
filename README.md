@@ -12,6 +12,14 @@
     npm install
     ```
 
+### IDE Setup
+
+This project uses [EditorConfig] for IDE configuration.
+
+See `.editorconfig` for settings.
+
+Many popular IDEs and editors support this out of the box or with a plugin.
+
 ### AWS
 
 1.  Install AWS CLI for your computer
@@ -20,10 +28,11 @@
 
 ### Serverless
 
-1.  Install `serverless` as a global
-    ```
-    npm install -g serverless
-    ```
+This project uses [Serverless] to deploy. Install `serverless` as a global:
+
+```
+npm install -g serverless
+```
 
 ### Domain Name
 
@@ -35,6 +44,54 @@
     ```
     serverless create_domain
     ```
+
+## Development
+
+### Prettier
+
+This project uses [Prettier], so please run it before checking in:
+
+```
+npm run pretty
+```
+
+See `.prettierrc` for settings.
+
+Some IDEs and editors have plugins for running Prettier.
+
+### Linting
+
+This project uses [TSLint]. Check linting before checking in:
+
+```
+npm run lint
+```
+
+See `tslint.json` for settings.
+
+Many IDEs and editors support TSLint.
+
+## Testing
+
+This project uses [Jasmine] for testing. Run tests before checking in.
+
+### Unit Tests
+
+```
+npm test
+```
+
+### Integration Tests
+
+```
+npm run test:integration
+```
+
+## Building
+
+```
+npm run build
+```
 
 ## Deploy
 
@@ -50,4 +107,9 @@ npm run deploy:test
 npm run deploy
 ```
 
+[editorconfig]: https://editorconfig.org/
+[jasmine]: https://jasmine.github.io/
+[prettier]: https://prettier.io/
+[serverless]: https://serverless.com/
 [serverless-domain-manager]: https://github.com/amplify-education/serverless-domain-manager
+[tslint]: https://palantir.github.io/tslint/
