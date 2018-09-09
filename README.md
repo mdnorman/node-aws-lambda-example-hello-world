@@ -95,6 +95,12 @@ npm run build
 
 ## Deploy
 
+> NOTE: AWS Certificate validation requires a manual step during the first deployment.
+>
+> When the following is displayed, go to the AWS Certificate Manager console for the new domain name and create the record in Route 53:
+>
+> `CloudFormation - CREATE_IN_PROGRESS - AWS::CertificateManager::Certificate - WebAppCertificate`
+
 ### Test
 
 ```
