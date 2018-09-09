@@ -113,6 +113,10 @@ npm run deploy:test
 npm run deploy
 ```
 
+### Troubleshooting
+
+If there are errors when deploying, check the Cloudformation logs for the stack.
+
 [editorconfig]: https://editorconfig.org/
 [jasmine]: https://jasmine.github.io/
 [node version manager]: https://github.com/creationix/nvm
