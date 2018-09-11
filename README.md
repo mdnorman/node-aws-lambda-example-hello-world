@@ -37,8 +37,8 @@ npm install -g serverless
 ### Domain Name
 
 1.  Follow the instructions at [serverless-domain-manager] for registering and setting up a domain name
-    1.  Create `test-api.whatever.com`
-    2.  Create `api.whatever.com`
+    1.  Create `test-api.whatever.com` certificate
+    2.  Create `api.whatever.com` certificate
 2.  Change the base `custom.baseDomainName` property in `serverless.yml` to the zone name, eg `whatever.com`
 3.  Then run:
     ```
