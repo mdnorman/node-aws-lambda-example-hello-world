@@ -17,7 +17,7 @@ custom:
   domainNameStage:
     test: test-api.${self:custom.baseDomainName}
     prod: api.${self:custom.baseDomainName}
-  baseDomainName: CHANGEME
+  baseDomainName: codesaplings.com
   customDomain:
     domainName: ${self:custom.domainName}
     certificateName: ${self:custom.domainName}
