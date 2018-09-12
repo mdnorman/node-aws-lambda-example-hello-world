@@ -126,7 +126,7 @@ npm run deploy:test
 #### Checking logs
 
 ```
-serverless logs -t -f CHANGEME
+serverless logs -t -f helloWorld
 ```
 
 ### Production
@@ -138,7 +138,7 @@ npm run deploy
 #### Checking logs
 
 ```
-serverless logs --stage prod -t -f CHANGEME
+serverless logs --stage prod -t -f helloWorld
 ```
 
 ### Troubleshooting
