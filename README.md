@@ -47,6 +47,22 @@ npm install -g serverless
 
 ## Development
 
+### Invoking locally
+
+Use serverless to run the server locally:
+
+```
+serverless invoke local -f CHANGEME
+```
+
+### Invoking against test
+
+Use serverless to run the server against the test environment:
+
+```
+serverless invoke -f CHANGEME
+```
+
 ### Prettier
 
 This project uses [Prettier], so please run it before checking in:
