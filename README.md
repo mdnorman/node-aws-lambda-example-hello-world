@@ -52,7 +52,7 @@ npm install -g serverless
 Use serverless to run the server locally:
 
 ```
-serverless invoke local -f CHANGEME
+serverless invoke local -f helloWorld -p examples/invoke-data/queryHello.json
 ```
 
 ### Invoking against test
@@ -60,7 +60,7 @@ serverless invoke local -f CHANGEME
 Use serverless to run the server against the test environment:
 
 ```
-serverless invoke -f CHANGEME
+serverless invoke -f helloWorld -p examples/invoke-data/postHello.json
 ```
 
 ### Prettier
