@@ -1,0 +1,9 @@
+{
+  "resource": "/",
+  "httpMethod": "GET",
+  "queryStringParameters": null,
+  "multiValueQueryStringParameters": null,
+  "pathParameters": null,
+  "stageVariables": null,
+  "body": "{\"word\":\"post\"}"
+}

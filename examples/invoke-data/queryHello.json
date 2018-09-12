@@ -1,0 +1,9 @@
+{
+  "resource": "/",
+  "httpMethod": "GET",
+  "queryStringParameters": { "word": "query" },
+  "multiValueQueryStringParameters": { "word": ["query"] },
+  "pathParameters": null,
+  "stageVariables": null,
+  "body": null
+}
