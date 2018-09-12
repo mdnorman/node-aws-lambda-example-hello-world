@@ -123,10 +123,22 @@ npm run build
 npm run deploy:test
 ```
 
+#### Checking logs
+
+```
+serverless logs -t -f CHANGEME
+```
+
 ### Production
 
 ```
 npm run deploy
+```
+
+#### Checking logs
+
+```
+serverless logs --stage prod -t -f CHANGEME
 ```
 
 ### Troubleshooting
