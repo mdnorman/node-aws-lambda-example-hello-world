@@ -1,6 +1,6 @@
 {
   "resource": "/",
-  "httpMethod": "GET",
+  "httpMethod": "POST",
   "queryStringParameters": null,
   "multiValueQueryStringParameters": null,
   "pathParameters": null,
