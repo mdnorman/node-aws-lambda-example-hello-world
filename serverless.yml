@@ -3,6 +3,7 @@ service: node-aws-lambda-example-hello-world
 plugins:
   - serverless-domain-manager
   - serverless-aws-documentation
+  - serverless-offline
 
 provider:
   name: aws
