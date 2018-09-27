@@ -55,6 +55,12 @@ Use serverless to run the server locally:
 serverless invoke local -f CHANGEME
 ```
 
+### Running as a server
+
+```
+AWS_SDK_LOAD_CONFIG=true serverless offline
+```
+
 ### Invoking against test
 
 Use serverless to run the server against the test environment:
