@@ -3,6 +3,7 @@ service: CHANGEME
 plugins:
   - serverless-domain-manager
   - serverless-aws-documentation
+  - serverless-offline
 
 provider:
   name: aws
