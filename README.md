@@ -26,14 +26,6 @@ Many popular IDEs and editors support this out of the box or with a plugin.
 2.  Setup AWS CLI with your credentials
 3.  Add a configuration for `serverless` in your AWS config files
 
-### Serverless
-
-This project uses [Serverless](https://serverless.com/) to deploy. Install `serverless` as a global:
-
-```
-npm install -g serverless
-```
-
 ### Domain Name
 
 1.  Follow the instructions at [serverless-domain-manager](https://github.com/amplify-education/serverless-domain-manager) for registering and setting up a domain name
@@ -42,7 +34,7 @@ npm install -g serverless
 2.  Change the base `custom.baseDomainName` property in `serverless.yml` to the zone name, eg `whatever.com`
 3.  Then run:
     ```
-    serverless create_domain
+    npx serverless create_domain
     ```
 
 ## Development
@@ -52,13 +44,13 @@ npm install -g serverless
 Use serverless to run the server locally:
 
 ```
-serverless invoke local -f CHANGEME
+npx serverless invoke local -f CHANGEME
 ```
 
 ### Running as a server
 
 ```
-AWS_SDK_LOAD_CONFIG=true serverless offline
+AWS_SDK_LOAD_CONFIG=true npx serverless offline
 ```
 
 ### Invoking against test
@@ -66,7 +58,7 @@ AWS_SDK_LOAD_CONFIG=true serverless offline
 Use serverless to run the server against the test environment:
 
 ```
-serverless invoke -f CHANGEME
+npx serverless invoke -f CHANGEME
 ```
 
 ### Prettier
@@ -132,7 +124,7 @@ npm run deploy:test
 #### Checking logs
 
 ```
-serverless logs -t -f CHANGEME
+npx serverless logs -t -f CHANGEME
 ```
 
 ### Production
@@ -144,10 +136,9 @@ npm run deploy
 #### Checking logs
 
 ```
-serverless logs --stage prod -t -f CHANGEME
+npx serverless logs --stage prod -t -f CHANGEME
 ```
 
 ### Troubleshooting
 
 If there are errors when deploying, check the Cloudformation logs for the stack.
-
