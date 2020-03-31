@@ -4,7 +4,7 @@
 
 ### Node
 
-1.  Install `nvm` ([Node Version Manager])
+1.  Install `nvm` ([Node Version Manager](https://github.com/creationix/nvm))
 2.  `cd` to the project directory and execute the following:
     ```
     nvm install
@@ -14,7 +14,7 @@
 
 ### IDE Setup
 
-This project uses [EditorConfig] for IDE configuration.
+This project uses [EditorConfig](https://editorconfig.org/) for IDE configuration.
 
 See `.editorconfig` for settings.
 
@@ -26,23 +26,15 @@ Many popular IDEs and editors support this out of the box or with a plugin.
 2.  Setup AWS CLI with your credentials
 3.  Add a configuration for `serverless` in your AWS config files
 
-### Serverless
-
-This project uses [Serverless] to deploy. Install `serverless` as a global:
-
-```
-npm install -g serverless
-```
-
 ### Domain Name
 
-1.  Follow the instructions at [serverless-domain-manager] for registering and setting up a domain name
+1.  Follow the instructions at [serverless-domain-manager](https://github.com/amplify-education/serverless-domain-manager) for registering and setting up a domain name
     1.  Create `test-api.whatever.com` certificate
     2.  Create `api.whatever.com` certificate
 2.  Change the base `custom.baseDomainName` property in `serverless.yml` to the zone name, eg `whatever.com`
 3.  Then run:
     ```
-    serverless create_domain
+    npx serverless create_domain
     ```
 
 ## Development
@@ -52,13 +44,13 @@ npm install -g serverless
 Use serverless to run the server locally:
 
 ```
-serverless invoke local -f helloWorld -p examples/invoke-data/queryHello.json
+npx serverless invoke local -f helloWorld -p examples/invoke-data/queryHello.json
 ```
 
 ### Running as a server
 
 ```
-AWS_SDK_LOAD_CONFIG=true serverless offline
+AWS_SDK_LOAD_CONFIG=true npx serverless offline
 ```
 
 ### Invoking against test
@@ -66,12 +58,12 @@ AWS_SDK_LOAD_CONFIG=true serverless offline
 Use serverless to run the server against the test environment:
 
 ```
-serverless invoke -f helloWorld -p examples/invoke-data/postHello.json
+npx serverless invoke -f helloWorld -p examples/invoke-data/postHello.json
 ```
 
 ### Prettier
 
-This project uses [Prettier], so please run it before checking in:
+This project uses [Prettier](https://prettier.io/), so please run it before checking in:
 
 ```
 npm run pretty
@@ -83,7 +75,7 @@ Some IDEs and editors have plugins for running Prettier.
 
 ### Linting
 
-This project uses [TSLint]. Check linting before checking in:
+This project uses [TSLint](https://palantir.github.io/tslint/). Check linting before checking in:
 
 ```
 npm run lint
@@ -95,7 +87,7 @@ Many IDEs and editors support TSLint.
 
 ## Testing
 
-This project uses [Jasmine] for testing. Run tests before checking in.
+This project uses [Jest](https://jestjs.io/) for testing. Run tests before checking in.
 
 ### Unit Tests
 
@@ -132,7 +124,7 @@ npm run deploy:test
 #### Checking logs
 
 ```
-serverless logs -t -f helloWorld
+npx serverless logs -t -f helloWorld
 ```
 
 ### Production
@@ -144,17 +136,9 @@ npm run deploy
 #### Checking logs
 
 ```
-serverless logs --stage prod -t -f helloWorld
+npx serverless logs --stage prod -t -f helloWorld
 ```
 
 ### Troubleshooting
 
 If there are errors when deploying, check the Cloudformation logs for the stack.
-
-[editorconfig]: https://editorconfig.org/
-[jasmine]: https://jasmine.github.io/
-[node version manager]: https://github.com/creationix/nvm
-[prettier]: https://prettier.io/
-[serverless]: https://serverless.com/
-[serverless-domain-manager]: https://github.com/amplify-education/serverless-domain-manager
-[tslint]: https://palantir.github.io/tslint/
