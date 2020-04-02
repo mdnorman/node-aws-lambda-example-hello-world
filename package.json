@@ -21,6 +21,7 @@
     "posttest": "npm run lint",
     "lint": "tslint -c tslint.json --project tsconfig.json && tslint -c tslint.json --project spec/tsconfig.json",
     "pretty": "pretty-quick --stage",
+    "offline": "serverless offline",
     "deploy": "serverless deploy -v --stage test",
     "deploy:prod": "serverless deploy -v --stage prod"
   },
