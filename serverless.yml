@@ -10,13 +10,14 @@ provider:
   runtime: nodejs12.x
   memorySize: 512
   profile: serverless
-  stage: test
+  stage: dev
   region: us-east-1
 
 custom:
   stage: ${opt:stage, self:provider.stage}
   domainName: ${self:custom.domainNameStage.${self:custom.stage}}
   domainNameStage:
+    dev: dev-api.${self:custom.baseDomainName}
     test: test-api.${self:custom.baseDomainName}
     prod: api.${self:custom.baseDomainName}
   baseDomainName: codesaplings.com
@@ -26,6 +27,15 @@ custom:
     basePath: hello
     stage: ${self:custom.stage}
     createRoute53Record: true
+  environmentValues: ${self:custom.environmentValuesStage.${self:custom.stage}}
+  environmentValuesStage:
+    dev:
+      NODE_ENV: development
+    test:
+      NODE_ENV: test
+    prod:
+      NODE_ENV: production
+
   documentation:
     info:
       title: Hello World!
@@ -62,58 +72,58 @@ functions:
   helloWorld:
     handler: dist/events/helloWorld.handler
     events:
-    - http:
-        path: /
-        method: get
-        cors: true
-        documentation:
-          summary: Get a hello message
-          description: Returns a JSON string with a nice message
-          queryParams:
-          - name: word
-            in: query
-            description: A word to use in the message
-            required: false
-            type: string
-          methodResponses:
-            - statusCode: '200'
-              responseBody:
-                description: Successful operation
-              responseModels:
-                "application/json": DataOutput
-            - statusCode: '400'
-              responseBody:
-                description: Invalid input provided
-              responseModels:
-                "application/json": ErrorResponse
-            - statusCode: '500'
-              responseBody:
-                description: Unhandled error
-              responseModels:
-                "application/json": ErrorResponse
+      - http:
+          path: /
+          method: get
+          cors: true
+          documentation:
+            summary: Get a hello message
+            description: Returns a JSON string with a nice message
+            queryParams:
+              - name: word
+                in: query
+                description: A word to use in the message
+                required: false
+                type: string
+            methodResponses:
+              - statusCode: '200'
+                responseBody:
+                  description: Successful operation
+                responseModels:
+                  "application/json": DataOutput
+              - statusCode: '400'
+                responseBody:
+                  description: Invalid input provided
+                responseModels:
+                  "application/json": ErrorResponse
+              - statusCode: '500'
+                responseBody:
+                  description: Unhandled error
+                responseModels:
+                  "application/json": ErrorResponse
 
-    - http:
-        path: /
-        method: post
-        cors: true
-        documentation:
-          summary: Produce a hello message
-          description: Returns a JSON string with a nice message
-          requestModels:
-            "application/json": DataInput
-          methodResponses:
-          - statusCode: '200'
-            responseBody:
-              description: Successful operation
-            responseModels:
-              "application/json": DataOutput
-          - statusCode: '400'
-            responseBody:
-              description: Invalid input provided
-            responseModels:
-              "application/json": ErrorResponse
-          - statusCode: '500'
-            responseBody:
-              description: Unhandled error
-            responseModels:
-              "application/json": ErrorResponse
+      - http:
+          path: /
+          method: post
+          cors: true
+          documentation:
+            summary: Produce a hello message
+            description: Returns a JSON string with a nice message
+            requestModels:
+              "application/json": DataInput
+            methodResponses:
+              - statusCode: '200'
+                responseBody:
+                  description: Successful operation
+                responseModels:
+                  "application/json": DataOutput
+              - statusCode: '400'
+                responseBody:
+                  description: Invalid input provided
+                responseModels:
+                  "application/json": ErrorResponse
+              - statusCode: '500'
+                responseBody:
+                  description: Unhandled error
+                responseModels:
+                  "application/json": ErrorResponse
