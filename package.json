@@ -3,7 +3,7 @@
   "name": "node-aws-lambda-example-hello-world",
   "description": "",
   "private": true,
-  "license": "commercial",
+  "license": "UNLICENSED",
   "version": "0.0.0",
   "homepage": "https://github.com/mdnorman/node-aws-lambda-example-hello-world/wiki/Home",
   "repository": {
@@ -16,6 +16,7 @@
   "scripts": {
     "clean": "rm -rf dist && rm -rf out",
     "build": "tsc",
+    "build:watch": "tsc --watch",
     "rebuild": "npm run clean && npm run build",
     "test": "jest",
     "posttest": "npm run lint",
