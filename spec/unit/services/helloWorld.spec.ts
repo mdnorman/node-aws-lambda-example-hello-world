@@ -52,15 +52,8 @@ describe('helloWorld', () => {
 
   describe('with bad input', () => {
     it('should throw error', async () => {
-      try {
-        const result = await helloWorld('BAD!');
-        fail(`No error thrown. Got result: ${result}`);
-      } catch (e) {
-        expect(e).not.toBeNull();
-        expect(e).toEqual(jasmine.any(ArgumentError));
-        expect(e.message).toContain('Bad word given');
-        expect(e.message).toContain('BAD!');
-      }
+      await expect(helloWorld('BAD!')).rejects.toThrowError('Bad word given');
+      await expect(helloWorld('BAD!')).rejects.toThrowError('BAD!');
     });
   });
 });
