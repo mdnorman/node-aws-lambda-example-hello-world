@@ -34,7 +34,7 @@ Many popular IDEs and editors support this out of the box or with a plugin.
 2.  Change the base `custom.baseDomainName` property in `serverless.yml` to the zone name, eg `whatever.com`
 3.  Then run:
     ```
-    npx serverless create_domain
+    npx serverless create_domain --stage test
     ```
 
 ## Development
