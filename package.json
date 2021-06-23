@@ -38,7 +38,7 @@
     "pretty-quick": "2.0.1",
     "serverless": "1.70.0",
     "serverless-aws-documentation": "1.1.0",
-    "serverless-domain-manager": "3.3.1",
+    "serverless-domain-manager": "3.3.2",
     "serverless-offline": "6.0.0",
     "ts-jest": "25.2.1",
     "ts-node": "8.6.2",
