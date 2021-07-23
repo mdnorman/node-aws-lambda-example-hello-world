@@ -27,7 +27,7 @@
     "deploy:prod": "serverless deploy -v --stage prod"
   },
   "dependencies": {
-    "aws-sdk": "2.643.0"
+    "aws-sdk": "2.953.0"
   },
   "devDependencies": {
     "@types/aws-lambda": "8.10.46",
