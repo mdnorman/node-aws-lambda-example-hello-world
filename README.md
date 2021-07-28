@@ -58,7 +58,7 @@ AWS_SDK_LOAD_CONFIG=true npx serverless offline
 Use serverless to run the server against the test environment:
 
 ```
-npx serverless invoke -f helloWorld -p examples/invoke-data/postHello.json
+npx serverless invoke --stage test -f helloWorld -p examples/invoke-data/postHello.json
 ```
 
 ### Prettier
@@ -110,19 +110,19 @@ npm run build
 ### Test
 
 ```
-npm run deploy:test
+npm run deploy
 ```
 
 #### Checking logs
 
 ```
-npx serverless logs -t -f helloWorld
+npx serverless logs --stage test -t -f helloWorld
 ```
 
 ### Production
 
 ```
-npm run deploy
+npm run deploy:prod
 ```
 
 #### Checking logs
