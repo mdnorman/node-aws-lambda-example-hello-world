@@ -21,7 +21,7 @@
     "test": "jest",
     "posttest": "npm run lint",
     "lint": "eslint",
-    "pretty": "pretty-quick --stage",
+    "pretty": "pretty-quick"
     "offline": "serverless offline",
     "deploy": "serverless deploy -v --stage test",
     "deploy:prod": "serverless deploy -v --stage prod"
