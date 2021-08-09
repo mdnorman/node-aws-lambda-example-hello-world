@@ -27,7 +27,7 @@
     "deploy:prod": "serverless deploy -v --stage prod"
   },
   "dependencies": {
-    "aws-sdk": "2.959.0"
+    "aws-sdk": "2.960.0"
   },
   "devDependencies": {
     "@types/aws-lambda": "8.10.81",
@@ -41,9 +41,9 @@
     "jest": "27.0.6",
     "prettier": "2.3.2",
     "pretty-quick": "3.1.1",
-    "serverless": "2.52.1",
+    "serverless": "2.53.1",
     "serverless-aws-documentation": "1.1.0",
-    "serverless-domain-manager": "5.1.4",
+    "serverless-domain-manager": "5.1.5",
     "serverless-offline": "8.0.0",
     "ts-jest": "27.0.4",
     "ts-node": "10.2.0",
