@@ -49,6 +49,7 @@ custom:
     nodeEnvironmentStage:
       dev: development
       test: test
+      prod: production
 
   documentation:
     info:
