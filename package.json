@@ -27,10 +27,10 @@
     "deploy:prod": "serverless deploy -v --stage prod"
   },
   "dependencies": {
-    "aws-sdk": "2.968.0"
+    "aws-sdk": "2.973.0"
   },
   "devDependencies": {
-    "@types/aws-lambda": "8.10.82",
+    "@types/aws-lambda": "8.10.83",
     "@types/jest": "27.0.1",
     "@types/node": "16.4.5",
     "@typescript-eslint/eslint-plugin": "4.29.2",
@@ -41,7 +41,7 @@
     "jest": "27.0.6",
     "prettier": "2.3.2",
     "pretty-quick": "3.1.1",
-    "serverless": "2.54.0",
+    "serverless": "2.55.0",
     "serverless-aws-documentation": "1.1.0",
     "serverless-domain-manager": "5.1.5",
     "serverless-offline": "8.0.0",
