@@ -41,7 +41,7 @@
     "jest": "27.3.1",
     "prettier": "2.4.1",
     "pretty-quick": "3.1.1",
-    "serverless": "2.63.0",
+    "serverless": "2.64.1",
     "serverless-aws-documentation": "1.1.0",
     "serverless-domain-manager": "5.1.5",
     "serverless-offline": "8.2.0",
