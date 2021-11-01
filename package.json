@@ -30,7 +30,7 @@
     "aws-sdk": "2.1013.0"
   },
   "devDependencies": {
-    "@types/aws-lambda": "8.10.84",
+    "@types/aws-lambda": "8.10.85",
     "@types/jest": "27.0.2",
     "@types/node": "16.4.5",
     "@typescript-eslint/eslint-plugin": "5.1.0",
