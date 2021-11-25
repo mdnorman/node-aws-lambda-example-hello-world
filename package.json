@@ -39,7 +39,7 @@
     "eslint-plugin-import": "2.25.2",
     "eslint-plugin-prettier": "4.0.0",
     "jest": "27.3.1",
-    "prettier": "2.4.1",
+    "prettier": "2.5.0",
     "pretty-quick": "3.1.1",
     "serverless": "2.64.1",
     "serverless-aws-documentation": "1.1.0",
