@@ -44,9 +44,9 @@ custom:
   environment:
     debugLog: ${self:custom.environment.debugLogStage.${self:custom.stage}}
     debugLogStage:
-      dev: 'CHANGEME-*,-*:trace'
-      test: 'CHANGEME-*,-*:trace'
-      prod: 'CHANGEME-*,-*:trace'
+      dev: 'CHANGEME:*,-*:trace'
+      test: 'CHANGEME:*,-*:trace'
+      prod: 'CHANGEME:*,-*:trace'
     nodeEnvironment: ${self:custom.environment.nodeEnvironmentStage.${self:custom.stage}}
     nodeEnvironmentStage:
       dev: development
