@@ -2,7 +2,7 @@ service: CHANGEME
 
 plugins:
   - serverless-domain-manager
-  - serverless-aws-documentation
+  - serverless-v2-aws-documentation
   - serverless-offline
 
 provider:
@@ -11,6 +11,8 @@ provider:
   profile: serverless
   stage: dev
   region: us-east-1
+
+  lambdaHashingVersion: 20201221
 
   logs:
     restApi: true
@@ -42,9 +44,9 @@ custom:
   environment:
     debugLog: ${self:custom.environment.debugLogStage.${self:custom.stage}}
     debugLogStage:
-      dev: ''
-      test: ''
-      prod: ''
+      dev: 'CHANGEME-*,-*:trace'
+      test: 'CHANGEME-*,-*:trace'
+      prod: 'CHANGEME-*,-*:trace'
     nodeEnvironment: ${self:custom.environment.nodeEnvironmentStage.${self:custom.stage}}
     nodeEnvironmentStage:
       dev: development
