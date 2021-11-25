@@ -23,8 +23,8 @@
     "lint": "eslint",
     "pretty": "pretty-quick",
     "offline": "serverless offline",
-    "deploy": "serverless deploy -v --stage test",
-    "deploy:prod": "serverless deploy -v --stage prod"
+    "deploy": "serverless deploy --verbose --stage test",
+    "deploy:prod": "serverless deploy --verbose --stage prod"
   },
   "dependencies": {
     "aws-sdk": "2.1036.0",
@@ -44,9 +44,9 @@
     "prettier": "2.5.0",
     "pretty-quick": "3.1.2",
     "serverless": "2.66.2",
-    "serverless-aws-documentation": "1.1.0",
     "serverless-domain-manager": "5.2.0",
     "serverless-offline": "8.3.1",
+    "serverless-v2-aws-documentation": "2.0.4",
     "ts-jest": "27.0.7",
     "ts-node": "10.4.0",
     "tsutils": "3.21.0",
