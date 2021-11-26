@@ -1,4 +1,7 @@
 import { ArgumentError } from '../utils/errors';
+import { createServicesDebugLogger } from './logger';
+
+const debug = createServicesDebugLogger('helloWorld');
 
 class IllegalWordError extends ArgumentError {
   constructor(word: string) {
@@ -7,10 +10,10 @@ class IllegalWordError extends ArgumentError {
 }
 
 export const helloWorld = async (word?: string) => {
-  console.log(`helloWorld: ${word}`);
+  debug`helloWorld: ${word}`;
 
   if (word === 'BAD!') {
-    console.log(`helloWorld bad word: ${word}`);
+    debug`helloWorld bad word: ${word}`;
     throw new IllegalWordError(word);
   }
 

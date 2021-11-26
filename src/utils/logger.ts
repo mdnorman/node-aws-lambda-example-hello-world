@@ -1,6 +1,6 @@
 import debug from 'debug';
 
-const loggerPrefix = 'CHANGEME';
+const loggerPrefix = 'sapling-hello-world';
 
 export type TaggedTemplateDebugLogger = (parts: TemplateStringsArray, ...values: any[]) => void;
 

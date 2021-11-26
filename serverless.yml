@@ -45,9 +45,9 @@ custom:
   environment:
     debugLog: ${self:custom.environment.debugLogStage.${self:custom.stage}}
     debugLogStage:
-      dev: 'CHANGEME:*,-*:trace'
-      test: 'CHANGEME:*,-*:trace'
-      prod: 'CHANGEME:*,-*:trace'
+      dev: 'sapling-hello-world:*,-*:trace'
+      test: 'sapling-hello-world:*,-*:trace'
+      prod: 'sapling-hello-world:*,-*:trace'
     nodeEnvironment: ${self:custom.environment.nodeEnvironmentStage.${self:custom.stage}}
     nodeEnvironmentStage:
       dev: development
@@ -121,17 +121,17 @@ functions:
                 responseBody:
                   description: Successful operation
                 responseModels:
-                  "application/json": DataOutput
+                  'application/json': DataOutput
               - statusCode: '400'
                 responseBody:
                   description: Invalid input provided
                 responseModels:
-                  "application/json": ErrorResponse
+                  'application/json': ErrorResponse
               - statusCode: '500'
                 responseBody:
                   description: Unhandled error
                 responseModels:
-                  "application/json": ErrorResponse
+                  'application/json': ErrorResponse
 
       - http:
           path: /
@@ -141,20 +141,20 @@ functions:
             summary: Produce a hello message
             description: Returns a JSON string with a nice message
             requestModels:
-              "application/json": DataInput
+              'application/json': DataInput
             methodResponses:
               - statusCode: '200'
                 responseBody:
                   description: Successful operation
                 responseModels:
-                  "application/json": DataOutput
+                  'application/json': DataOutput
               - statusCode: '400'
                 responseBody:
                   description: Invalid input provided
                 responseModels:
-                  "application/json": ErrorResponse
+                  'application/json': ErrorResponse
               - statusCode: '500'
                 responseBody:
                   description: Unhandled error
                 responseModels:
-                  "application/json": ErrorResponse
+                  'application/json': ErrorResponse
