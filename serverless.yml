@@ -31,7 +31,7 @@ custom:
 
   domainName: ${self:custom.domainNameStage.${self:custom.stage}}
   domainNameStage:
-    dev: dev-api.${self:custom.baseDomainName}
+    dev: 'localhost:${self:custom.serverless-offline.httpPort}'
     test: test-api.${self:custom.baseDomainName}
     prod: api.${self:custom.baseDomainName}
   baseDomainName: CHANGEME
@@ -41,6 +41,12 @@ custom:
     basePath: CHANGEME
     stage: ${self:custom.stage}
     createRoute53Record: true
+
+  serverless-offline:
+    httpPort: '3000'
+    websocketPort: '3001'
+    lambdaPort: '3002'
+
   environment:
     debugLog: ${self:custom.environment.debugLogStage.${self:custom.stage}}
     debugLogStage:
