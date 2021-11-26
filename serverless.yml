@@ -3,6 +3,7 @@ service: CHANGEME
 plugins:
   - serverless-domain-manager
   - serverless-v2-aws-documentation
+  - serverless-jetpack
   - serverless-offline
 
 provider:
