@@ -3,6 +3,7 @@ import * as http from 'http';
 import * as https from 'https';
 import { createBaseDebugLogger } from './logger';
 
+const debug = createBaseDebugLogger('xray');
 const trace = createBaseDebugLogger('xray:trace');
 
 AWSXRay.setContextMissingStrategy((msg: string) => {
@@ -10,7 +11,21 @@ AWSXRay.setContextMissingStrategy((msg: string) => {
 });
 
 export const xrayCaptureAllHttpTraffic = () => {
-  AWSXRay.captureHTTPsGlobal(http, true);
-  AWSXRay.captureHTTPsGlobal(https, true);
-  AWSXRay.capturePromise();
+  try {
+    AWSXRay.captureHTTPsGlobal(http, true);
+  } catch (e) {
+    debug`Xray failed to capture http: ${e}`;
+  }
+
+  try {
+    AWSXRay.captureHTTPsGlobal(https, true);
+  } catch (e) {
+    debug`Xray failed to capture http: ${e}`;
+  }
+
+  try {
+    AWSXRay.capturePromise();
+  } catch (e) {
+    debug`Xray failed to capture promise: ${e}`;
+  }
 };
