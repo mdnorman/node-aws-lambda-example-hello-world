@@ -22,3 +22,6 @@ jobs:
         run: npm run build
       - name: Test
         run: npm run test -- --ci --maxWorkers=1 --reporters=default
+      - name: Check Serverless
+        run: npx serverless package --verbose --stage dev
+
