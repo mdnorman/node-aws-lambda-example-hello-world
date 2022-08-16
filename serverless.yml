@@ -93,6 +93,7 @@ package:
 
   exclude:
     - .circleci/**
+    - .github/**
     - .idea/**
     - .env*
     - examples/**
