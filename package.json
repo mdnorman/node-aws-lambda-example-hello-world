@@ -34,7 +34,7 @@
     }
   },
   "dependencies": {
-    "aws-sdk": "2.1197.0",
+    "aws-sdk": "2.1198.0",
     "aws-xray-sdk-core": "3.3.6",
     "debug": "4.3.4"
   },
@@ -55,7 +55,7 @@
     "serverless": "3.22.0",
     "serverless-domain-manager": "6.1.0",
     "serverless-jetpack": "0.11.1",
-    "serverless-offline": "9.2.4",
+    "serverless-offline": "9.2.5",
     "serverless-v2-aws-documentation": "2.0.4",
     "standard-version": "9.5.0",
     "ts-jest": "28.0.8",
