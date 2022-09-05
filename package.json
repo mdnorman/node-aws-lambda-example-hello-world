@@ -41,9 +41,9 @@
   "devDependencies": {
     "@types/aws-lambda": "8.10.102",
     "@types/jest": "28.1.8",
-    "@types/node": "16.11.56",
-    "@typescript-eslint/eslint-plugin": "5.36.1",
-    "@typescript-eslint/parser": "5.36.1",
+    "@types/node": "16.11.57",
+    "@typescript-eslint/eslint-plugin": "5.36.2",
+    "@typescript-eslint/parser": "5.36.2",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.23.0",
     "eslint-plugin-import": "2.26.0",
