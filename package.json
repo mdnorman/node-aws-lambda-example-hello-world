@@ -34,7 +34,7 @@
     }
   },
   "dependencies": {
-    "aws-sdk": "2.1213.0",
+    "aws-sdk": "2.1214.0",
     "aws-xray-sdk-core": "3.3.7",
     "debug": "4.3.4"
   },
@@ -42,8 +42,8 @@
     "@types/aws-lambda": "8.10.103",
     "@types/jest": "28.1.8",
     "@types/node": "16.11.58",
-    "@typescript-eslint/eslint-plugin": "5.36.2",
-    "@typescript-eslint/parser": "5.36.2",
+    "@typescript-eslint/eslint-plugin": "5.37.0",
+    "@typescript-eslint/parser": "5.37.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.23.1",
     "eslint-plugin-import": "2.26.0",
