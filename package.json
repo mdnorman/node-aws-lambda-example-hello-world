@@ -34,14 +34,14 @@
     }
   },
   "dependencies": {
-    "aws-sdk": "2.1214.0",
+    "aws-sdk": "2.1215.0",
     "aws-xray-sdk-core": "3.3.7",
     "debug": "4.3.4"
   },
   "devDependencies": {
-    "@types/aws-lambda": "8.10.103",
+    "@types/aws-lambda": "8.10.104",
     "@types/jest": "28.1.8",
-    "@types/node": "16.11.58",
+    "@types/node": "16.11.59",
     "@typescript-eslint/eslint-plugin": "5.37.0",
     "@typescript-eslint/parser": "5.37.0",
     "cz-conventional-changelog": "3.3.0",
