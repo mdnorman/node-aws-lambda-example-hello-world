@@ -39,7 +39,7 @@
     "debug": "4.3.6"
   },
   "devDependencies": {
-    "@types/aws-lambda": "8.10.142",
+    "@types/aws-lambda": "8.10.145",
     "@types/jest": "29.5.12",
     "@types/node": "20.14.13",
     "@typescript-eslint/eslint-plugin": "5.61.0",
