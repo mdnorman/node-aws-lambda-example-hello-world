@@ -36,7 +36,7 @@
   "dependencies": {
     "aws-sdk": "2.1412.0",
     "aws-xray-sdk-core": "3.5.4",
-    "debug": "4.3.6"
+    "debug": "4.3.7"
   },
   "devDependencies": {
     "@types/aws-lambda": "8.10.145",
